@@ -1,3 +1,12 @@
+/*
+Exceeding requirements for week 2 Journal project.
+I exceeded requirements by allowing the user to write an entry without a prompt as well as with a prompt.
+This is seen in the Journal Class.
+I also prompted the user to save their journal before exiting and warned them if they
+tried to save the journal when they had not yet loaded the journal - asking them to use a new name for
+saving the journal.
+*/
+
 using System;
 using System.Data.Common;
 

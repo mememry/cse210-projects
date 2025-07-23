@@ -3,6 +3,11 @@
     Methods include loading the journal from a file, saving the journal to a file, writing a new entry and displaying all entries.
     The filename is set to Journal.txt and is located in the same directory as the executable.
 */
+
+/*
+Exceeding requirements for week 2 Journal project.
+I exceeded requirements by allowing the user to write an entry without a prompt as well as with a prompt.
+*/
 public class Journal
 {
     private string _fileName = "Journal.txt";
