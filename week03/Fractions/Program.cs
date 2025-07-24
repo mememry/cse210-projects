@@ -13,6 +13,6 @@ class Program
 
 
         Console.WriteLine($"{fraction1.GetFractionString()}");
-        Console.WriteLine($"{fraction1.GetDecimalValue()}");
+        Console.WriteLine(fraction1.GetDecimalValue());
     }
 }
