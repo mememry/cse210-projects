@@ -2,6 +2,7 @@ public class Words
 {
     private List<string> _words = new List<string>();
     private List<bool> _hiddenWordIndexes = new List<bool>();
+    private int _hiddenWordCount = 0;
 
     public Words()
     {
@@ -52,10 +53,6 @@ public class Words
                 Console.Write($"{_words[wordIndex]} ");
             }
         }
-        foreach (string word in _words)
-        {
-            Console.Write($"{word.Length} ");
-        }
 
     }
 
@@ -63,6 +60,10 @@ public class Words
     {
         if (_hiddenWordIndexes.Contains(false))
         {
+            if (_hiddenWordCount + wordsToHideCount > _words.Count())
+            {
+                wordsToHideCount = _words.Count() - _hiddenWordCount;
+            }
 
             Random whichWordToHide = new Random();
             for (int i = 0; i < wordsToHideCount; i++)
@@ -80,6 +81,7 @@ public class Words
                     }
                 }
                 _hiddenWordIndexes[wordIndex] = true;
+                _hiddenWordCount++;
             }
         }
     }
