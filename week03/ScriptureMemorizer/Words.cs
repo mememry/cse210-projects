@@ -62,26 +62,36 @@ public class Words
         {
             if (_hiddenWordCount + wordsToHideCount > _words.Count())
             {
-                wordsToHideCount = _words.Count() - _hiddenWordCount;
-            }
-
-            Random whichWordToHide = new Random();
-            for (int i = 0; i < wordsToHideCount; i++)
-            {
-                int wordIndex = whichWordToHide.Next(0, _words.Count);
-                while (_hiddenWordIndexes[wordIndex])
+                for (int index = 0; index < _hiddenWordIndexes.Count(); index++)
                 {
-                    if (wordIndex < _words.Count)
-                    {
-                        wordIndex++;
-                    }
-                    else
-                    {
-                        wordIndex = 0;
-                    }
+                    _hiddenWordIndexes[index] = true;
                 }
-                _hiddenWordIndexes[wordIndex] = true;
-                _hiddenWordCount++;
+                _hiddenWordCount = _hiddenWordIndexes.Count();
+            }
+            else
+            {
+                Random whichWordToHide = new Random();
+                for (int i = 0; i < wordsToHideCount; i++)
+                {
+                    int wordIndex = whichWordToHide.Next(0, _words.Count-1);
+                    while (wordIndex >= _hiddenWordIndexes.Count())
+                    {
+                        wordIndex--;
+                    }
+                    while (_hiddenWordIndexes[wordIndex])
+                    {
+                        if (wordIndex < _words.Count)
+                        {
+                            wordIndex++;
+                        }
+                        else
+                        {
+                            wordIndex = 0;
+                        }
+                    }
+                    _hiddenWordIndexes[wordIndex] = true;
+                    _hiddenWordCount++;
+                }
             }
         }
     }
