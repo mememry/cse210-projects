@@ -1,8 +1,28 @@
 public class PurchaseOrder
 {
+    // orderID allows a customer to have multiple orders at the same time by assigning an orderID number
+    private string _orderID;
     private List<Product> _productList = new List<Product>();
     private Customer _customer;
     private float _shippingCost;
+
+    /*
+    method CreateOrder sets first part of an order with customer and the first selected product
+    */
+    public void CreateOrder(string orderNumber, Customer orderingCustomer, Product product)
+    {
+        _orderID = orderNumber;
+        _customer = orderingCustomer;
+        _productList.Add(product);       
+    }
+
+    /*
+    method AddToOrder selects an existing order and adds a new product to the order
+    */
+    public void AddToOrder(Product product)
+    {
+        _productList.Add(product);
+    }
 
     /*
     method CalculateOrderCost returns the value of the entire order, 

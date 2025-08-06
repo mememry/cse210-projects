@@ -7,6 +7,11 @@ class Program
         /*
         Create the list of customers and addresses
         */
+        Customer newCustomer;
+
+        newCustomer.CreateCustomer("Jon", "spring street", "MyTown", "WA", "98571", "USA");
+        Console.WriteLine(newCustomer);
+        
 
         /*
         Create the list of products

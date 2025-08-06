@@ -4,6 +4,16 @@ public class Customer
     private Address _address;
 
     /*
+    method CreateCustomer allows a user to set the customer and their address
+    */
+    public void CreateCustomer(string name, string street, string city, string stateProvince, string postal, string country)
+    {
+        _name = name;
+        _address.CreateAddress(street, city, stateProvince, postal, country);
+    }
+
+
+    /*
     method inUSA returns true if customer's address is in the USA. Calls address's 
     inUSA method
     */

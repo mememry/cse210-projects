@@ -6,6 +6,16 @@ public class Product
     private int _quantity;
 
     /*
+    method CreateProduct sets all the qualities of the product except quantity, which is set at the time the order is placed
+    */
+    public void CreateProduct(string ID, string name, float price)
+    {
+        _productID = ID;
+        _productName = name;
+        _price = price;
+    }
+
+    /*
     method ReturnProductID returns the product ID
     */
     public string ReturnProductID()

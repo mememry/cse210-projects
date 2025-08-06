@@ -7,6 +7,18 @@ public class Address
     private string _country;
 
     /*
+    method CreateAddress sets the full address
+    */
+    public void CreateAddress(string street, string city, string stateProvince, string postal, string country)
+    {
+        _street = street;
+        _city = city;
+        _stateProvince = stateProvince;
+        _postalCode = postal;
+        _country = country;
+    }
+
+    /*
     method InUSA returns a boolean if the country is USA
     */
     public Boolean InUSA()
