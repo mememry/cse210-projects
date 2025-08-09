@@ -1,4 +1,4 @@
-public class Video()
+public class Video
 {
     /* 
     Video class contains title, author, and length of video (in seconds)
@@ -13,11 +13,13 @@ public class Video()
     private List<Comment> _comments = new List<Comment>();
 
     /*constructor*/
-    public void Video()
+    public Video(string title, string author, int length)
     {
-        _videoTitle = "";
+        this._videoTitle = title;
+        this._videoAuthor = author;
+        this._length = length;
     }
-    
+
 
     /* set video data */
     public void SetVideo(string videoTitle, string videoAuthor, int length)
@@ -32,8 +34,7 @@ public class Video()
     */
     public void AddComment(string commenterName, string comment)
     {
-        Comment _newComment = new Comment();
-        _newComment.SetComment(commenterName, comment);
+        Comment _newComment = new Comment(commenterName, comment);
         _comments.Add(_newComment);
     }
 
@@ -64,10 +65,9 @@ public class Video()
         Console.WriteLine();
         foreach (Comment comment in _comments)
         {
-            Console.WriteLine($"{comment.CommentersName} said: ");
-            Console.WriteLine(comment.CommentText);
-            Console.WriteLine();
+            comment.DisplayCommentWithName();
         }
+        Console.WriteLine();
     }
 
 
