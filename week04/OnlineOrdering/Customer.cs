@@ -1,7 +1,16 @@
 public class Customer
 {
     private string _name;
-    private Address _address;
+    private Address _address = new Address();
+
+    /*
+    constructor
+    */
+    public Customer(string name, string street, string town, string stateProvince, string postalCode, string country)
+    {
+        this._name = name;
+        this._address.CreateAddress(street, town, stateProvince, postalCode, country);
+    }
 
     /*
     method CreateCustomer allows a user to set the customer and their address
@@ -45,5 +54,16 @@ public class Customer
         address = _name + _address.ReturnAddress();
 
         return address;
+    }
+
+    public void DisplayCustomer()
+    {
+        Console.WriteLine(_name);
+        Console.WriteLine(_address.ReturnAddress());
+    }
+
+    public string GetCustomerID
+    {
+        return _
     }
 }

@@ -2,13 +2,22 @@ public class Product
 {
     private string _productID;
     private string _productName;
-    private float _price;
-    private int _quantity;
+    private double _price;
+
+    /*
+    constructors
+    */
+    public Product(string productID, string productName, double price)
+    {
+        this._productID = productID;
+        this._productName = productName;
+        this._price = price;
+    }
 
     /*
     method CreateProduct sets all the qualities of the product except quantity, which is set at the time the order is placed
     */
-    public void CreateProduct(string ID, string name, float price)
+    public void CreateProduct(string ID, string name, double price)
     {
         _productID = ID;
         _productName = name;
@@ -31,24 +40,19 @@ public class Product
         return _productName;
     }
 
-    /*
-    method PricePerQuantity takes the quantity from an order and returns the price 
-    multiplied by the given quantity
-    */
-    public float PricePerQuantity()
-    {
-        float priceTimesQuantity = 0;
-
-        priceTimesQuantity = _price * _quantity;
-
-        return priceTimesQuantity;
-    }
 
     /*
-    method ReturnQuantity returns the quantity ordered
+    method ReturnProductName returns the name of the product
     */
-    public int ReturnQuantity()
+    public double ReturnProductPrice()
     {
-        return _quantity;
+        return _price;
     }
+
+    public string ReturnProductInfo()
+    {
+        string productInfo = $"{_productID} {_productName} {_price}";
+        return productInfo;
+    }
+
 }

@@ -20,4 +20,9 @@ class Assignment
         this._name = name;
         this._topic = topic;
     }
+
+    public string GetStudentName()
+    {
+        return _name;
+    }
 }

@@ -4,11 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        MathAssignment currentAssignment = new MathAssignment("Melanie", "Basic Arithmetic", "Division", "29-35, 40-58");
+        MathAssignment currentMathAssignment = new MathAssignment("Melanie", "Basic Arithmetic", "Division", "29-35, 40-58");
 
-        string printString = currentAssignment.GetSummary() + currentAssignment.GetHomeworkList();
+        string printString = currentMathAssignment.GetSummary() + currentMathAssignment.GetHomeworkList();
         Console.WriteLine(printString);
 
-        Console.WriteLine("Hello World! This is the Homework Project.");
+        WritingAssignment currentWritingAssignment = new WritingAssignment("Melanie", "Basic Arithmetic", "The Use of Arithmetic in Literature");
+        printString = currentWritingAssignment.GetWritingInformation();
+        Console.WriteLine(printString);
+
     }
 }
